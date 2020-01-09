@@ -13,7 +13,8 @@ def browser(request):
     print("\nstart browser for test..")
     options = Options()
     language = request.config.getoption("language")
-    options.add_experimental_option('prefs', {'intl.accept_languages': language})
+    options.add_experimental_option('prefs',
+        {'intl.accept_languages': language})
     browser = webdriver.Chrome(options=options)
     yield browser
     print("\nquit browser..")
